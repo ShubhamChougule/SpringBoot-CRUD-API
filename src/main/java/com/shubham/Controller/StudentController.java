@@ -47,6 +47,7 @@ public class StudentController {
     public ResponseEntity<String> deleteRecord(@PathVariable Long id) {
 
         if(repository.existsById(id)) {
+            repository.deleteById(id);
             return new ResponseEntity<>("Record Deleted with id : "+id, HttpStatus.OK);
         } else  {
             return new ResponseEntity<>("No Record Found with id : "+id, HttpStatus.NOT_FOUND);
