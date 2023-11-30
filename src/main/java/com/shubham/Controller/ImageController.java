@@ -31,7 +31,7 @@ public class ImageController {
                     .name(file.getOriginalFilename())
                     .URL((String) map.get("url")).build());
 
-            return new ResponseEntity<>("Record Inserted Successfully : " + ((String) map.get("url")), HttpStatus.OK);
+            return new ResponseEntity<>( "Record Inserted Successfully : " + ((String) map.get("url")), HttpStatus.OK);
         } catch (Exception c) {
             return new ResponseEntity<>("Something went wrong", HttpStatus.BAD_REQUEST);
         }
