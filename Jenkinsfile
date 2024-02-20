@@ -23,7 +23,7 @@ pipeline {
 		}
 		stage('Send Build info to JIRA') {
       		        steps {
-           			jiraSendBuildInfo branch: 'MYP-6', site: 'cooldsachin.atlassian.net'
+           			echo "Info send"
        			}
     		}
 	}
