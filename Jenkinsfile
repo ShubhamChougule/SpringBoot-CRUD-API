@@ -9,14 +9,19 @@ pipeline {
 		stage('TESTING') {
 			steps {
 					echo "Tested successfully"
+					sh 'build here...'
+            				sh 'run tests here if you like ...'
 			}
 
 
 			post {
 				always{
-					junit 'src/test/java/com/shubham/JpaDemoApplicationTests.java'
+					junit '**/reports/junit/*.xml'
 				}
 			}
+
+
+			
 
 			
 		}
