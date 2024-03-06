@@ -14,7 +14,7 @@ pipeline {
 
 			post {
 				always{
-					junit '**/src/test/java/com/shubham/*.java'
+					junit 'src/test/java/com/shubham/JpaDemoApplicationTests.java'
 				}
 			}
 
