@@ -6,25 +6,24 @@ pipeline {
 					echo "Compiled successfully"
 			}
 		}
-		stage('JUnit') {
+		stage('TESTING') {
 			steps {
 					echo "Tested successfully"
 			}
-		}
-		stage('Quality-Gate') {
-			steps {
-					echo "Quality-Gate sonar completed successfully"
-			}	
+
+
+			post {
+				always{
+					junit '**/src/test/java/com/shubham/*.java'
+				}
+			}
+
+			
 		}
 		stage('Deploy') {
 			steps {
 					echo "Deployment to nexus successfully"
 			}
 		}
-		stage('Send Build info to JIRA') {
-      		        steps {
-           			echo "Info send"
-       			}
-    		}
 	}
 }
