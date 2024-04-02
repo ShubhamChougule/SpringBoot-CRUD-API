@@ -12,18 +12,6 @@ pipeline {
 					sh 'build here...'
             				sh 'run tests here if you like ...'
 			}
-
-
-			post {
-				always{
-					junit '**/reports/junit/*.xml'
-				}
-			}
-
-
-			
-
-			
 		}
 		stage('Deploy') {
 			steps {
